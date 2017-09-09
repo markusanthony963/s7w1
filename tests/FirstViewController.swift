@@ -8,21 +8,24 @@
 
 import UIKit
 
-var list = [String]()
 
-var indx = ""
 
 
 class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
 
+    var todoArray:[list]=[]
+    
+    func updateData(todoe: list){
+    todoArray.append(todoe)
+    }
  
     @IBOutlet weak var tableView: UITableView!
     
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-    return list.count
+    return todoArray.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -32,21 +35,21 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
         
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! cellTableViewCell
-        cell.actLabel.text = list[indexPath.row]
-        cell.timeLabel.text = timeD
+        cell.actLabel.text = todoArray[indexPath.row].todo
+        cell.timeLabel.text = todoArray[indexPath.row].dateandtime
         return (cell)
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        indx = list[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "segue", sender: self)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let new = segue.destination as! infoViewController
-        new.temp = indx
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,6 +59,9 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let secondNavController = tabBarController?.viewControllers?[1] as! SecondViewController
+        secondNavController.delegate = self
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -66,4 +72,8 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
 
 }
-
+extension FirstViewController: SecondViewControllerDelegate{
+    func firstViewController(_controller: SecondViewController, didUpdateTodoes todoes: list) {
+    
+    }
+}

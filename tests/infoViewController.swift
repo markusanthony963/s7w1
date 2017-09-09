@@ -9,14 +9,17 @@
 import UIKit
 
 class infoViewController: UIViewController {
-    var temp = ""
+    
+    var todosObject: list = list()
+    
+    
     @IBOutlet weak var infLabel: UILabel!
 
     @IBOutlet weak var taim: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        infLabel.text = temp
-        taim.text = timeD
+        infLabel.text = todosObject.dateandtime
+        taim.text = todosObject.todo
         // Do any additional setup after loading the view.
     }
 

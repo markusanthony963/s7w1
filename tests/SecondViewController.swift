@@ -11,17 +11,33 @@ import UIKit
 var timeD = ""
 
 class SecondViewController: UIViewController {
-
+    var delegate: SecondViewControllerDelegate?
     @IBOutlet weak var input: UITextField!
 
     @IBAction func add(_ sender: AnyObject) {
         
-        if(input.text != ""){
-            dateShow()
-            list.append(input.text!)
+        func dateShow(){
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd MMM yyyy - HH:mm"
+            
+            
+            let result = formatter.string(from: date)
+            let tempTodo = list(todo: (input.text!),dateandtime: result)
+            self.delegate?.firstViewController(_controller: self, didUpdateTodoes: tempTodo)
+            
+            
+            
+            
+            
+            //todoArray.append(tempTodo)
             input.text = ""
+            self.view.endEditing(true)
+            tabBarController!.selectedIndex = 0
+            
+            
         }
-        
+
     }
     
     
@@ -38,6 +54,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -49,3 +66,7 @@ class SecondViewController: UIViewController {
 
 }
 
+
+protocol SecondViewControllerDelegate{
+    func firstViewController(_controller: SecondViewController,didUpdateTodoes todoes: list)
+}
