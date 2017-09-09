@@ -8,8 +8,34 @@
 
 import UIKit
 
+var timeD = ""
+
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var input: UITextField!
+
+    @IBAction func add(_ sender: AnyObject) {
+        
+        if(input.text != ""){
+            dateShow()
+            list.append(input.text!)
+            input.text = ""
+        }
+        
+    }
+    
+    
+    func dateShow(){
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy - HH:mm"
+        let result = formatter.string(from: date)
+        timeD = result
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

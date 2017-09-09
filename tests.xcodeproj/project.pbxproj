@@ -15,6 +15,8 @@
 		6AB73A391F5A51D3008DE00E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AB73A371F5A51D3008DE00E /* LaunchScreen.storyboard */; };
 		6AB73A441F5A51D3008DE00E /* testsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB73A431F5A51D3008DE00E /* testsTests.swift */; };
 		6AB73A4F1F5A51D3008DE00E /* testsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB73A4E1F5A51D3008DE00E /* testsUITests.swift */; };
+		6AB73A5F1F5A6573008DE00E /* cellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB73A5E1F5A6573008DE00E /* cellTableViewCell.swift */; };
+		6AB73A611F5A6D28008DE00E /* infoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB73A601F5A6D28008DE00E /* infoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		6AB73A4A1F5A51D3008DE00E /* testsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB73A4E1F5A51D3008DE00E /* testsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testsUITests.swift; sourceTree = "<group>"; };
 		6AB73A501F5A51D3008DE00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AB73A5E1F5A6573008DE00E /* cellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cellTableViewCell.swift; sourceTree = "<group>"; };
+		6AB73A601F5A6D28008DE00E /* infoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				6AB73A351F5A51D3008DE00E /* Assets.xcassets */,
 				6AB73A371F5A51D3008DE00E /* LaunchScreen.storyboard */,
 				6AB73A3A1F5A51D3008DE00E /* Info.plist */,
+				6AB73A5E1F5A6573008DE00E /* cellTableViewCell.swift */,
+				6AB73A601F5A6D28008DE00E /* infoViewController.swift */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -263,6 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AB73A311F5A51D3008DE00E /* SecondViewController.swift in Sources */,
+				6AB73A5F1F5A6573008DE00E /* cellTableViewCell.swift in Sources */,
+				6AB73A611F5A6D28008DE00E /* infoViewController.swift in Sources */,
 				6AB73A2D1F5A51D3008DE00E /* AppDelegate.swift in Sources */,
 				6AB73A2F1F5A51D3008DE00E /* FirstViewController.swift in Sources */,
 			);
