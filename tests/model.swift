@@ -5,19 +5,14 @@
 //  Created by iosdev on 9/9/17.
 //  Copyright © 2017 iosdev. All rights reserved.
 //
-
+import RealmSwift
 import Foundation
 
-class list{
+class ListM: Object {
 
-    var todo = ""
-    var dateandtime = ""
+    dynamic var todo = ""
+    dynamic var dateandtime = ""
     
-    init(){
-    }
-    
-    init(todo:String,dateandtime: String){
-    self.todo = todo
-        self.dateandtime=dateandtime
-    }
+
+ 
 }

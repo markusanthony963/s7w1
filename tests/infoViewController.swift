@@ -10,7 +10,7 @@ import UIKit
 
 class infoViewController: UIViewController {
     
-    var todosObject: list = list()
+    var todosObject = ListM()
     
     
     @IBOutlet weak var infLabel: UILabel!
